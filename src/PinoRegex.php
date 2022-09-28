@@ -11,7 +11,8 @@ class PinoRegex{
 
     public static function GetRegex($GetRequestData,$GetTypeData) {
         
-        if($GetTypeData == string){
+        if($GetTypeData == "string" || $GetTypeData == "String"){
+            
             return PinoRegex::String($GetRequestData);
         }
 
