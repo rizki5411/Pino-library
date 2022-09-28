@@ -44,7 +44,7 @@ Kecuali jika anda bisa merubah struktur namespace dan usage di setiap File Pino 
 ```php
 <?php
 
-    // inclue autoload vendor
+    // include autoload vendor
     require_once __DIR__ . '/vendor/autoload.php';
 
     // inclue Pino Library
