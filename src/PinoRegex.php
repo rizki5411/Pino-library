@@ -20,8 +20,11 @@ class PinoRegex{
     public static function GetRegex($GetTypeData,$GetRequestData) {
         
         if($GetTypeData == "string" || $GetTypeData == "String" || $GetTypeData == "STRING"){
-            
+
+            $GetRequestData = str_replace('-', '', $GetRequestData);
+
             $GetRequestData = str_replace(' ', '-', $GetRequestData);
+            
             return PinoRegex::String($GetRequestData);
 
         }else if($GetTypeData == "integer" || $GetTypeData == "Integer" || $GetTypeData == "INTEGER"){
@@ -37,7 +40,7 @@ class PinoRegex{
 
     public static function String($GetRequestData){
 
-            return preg_replace('/[^A-Za-z0-9]/', '', $GetRequestData);
+            return preg_replace('/[^A-Za-z0-9-]/', '', $GetRequestData);
 
     }
     
