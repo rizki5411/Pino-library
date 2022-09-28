@@ -1,6 +1,6 @@
 <?php
 
-// inclue autoload vendor
+// include autoload vendor
 require_once __DIR__ . '/vendor/autoload.php';
 
 // inclue Pino Library
