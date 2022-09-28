@@ -1,12 +1,19 @@
 {
     "name": "gemarkode/pino-library",
-    "description": "Test composer package",
+    "description": "none",
+    "keywords": ["library", "pino-library"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "test",
-            "email": "test@gmail.com"
+            "name": "Septiyani Putri",
+            "role": "Author, Developer",
+            "homepage": "https://github.com/septiynp"
+        },
+        {
+            "name": "Rizky Tegar",
+            "role": "Developer",
+            "homepage": "https://github.com/rizkytegar"
         }
     ],
     "minimum-stability": "stable",
