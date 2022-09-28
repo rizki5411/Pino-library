@@ -11,7 +11,18 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"pino\\Library\\": "src/"}
+        "psr-4": {
+            "pino\\Library\\": "src/"
+        },
+        "files": [
+            "src/Pino.php"
+        ]
     },
-    "require": {}
+    "require": {
+        "php": "^7.4|^8.0"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
 }
