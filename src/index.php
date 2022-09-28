@@ -1,12 +1,12 @@
 <?php 
 
 
-namespace vitalis\HelloWorld;
+namespace pino\Library;
 
 class Index
 {
-    public function greet($greet = "Hello World")
+    public function test($value)
     {
-        return $greet;
+        return $value;
     }
 }

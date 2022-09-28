@@ -1,17 +1,17 @@
 {
-    "name": "vitalis/hello-composer",
-    "description": "A simple hello world composer package",
+    "name": "gemarkode/pino-library",
+    "description": "Test composer package",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Ogbonna Vitalis",
-            "email": "agavitalisogbonna@gmail.com"
+            "name": "test",
+            "email": "test@gmail.com"
         }
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"vitalis\\HelloWorld\\": "src/"}
+        "psr-4": {"pino\\Library": "src/"}
     },
     "require": {}
 }
