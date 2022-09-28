@@ -111,8 +111,8 @@ Menyaring data yang masuk melalui inputan atau form
 | :------------ | :------------ |:------------ | :------------ | :------------ | :------------ |
 | 1  | Cross site scripting (XSS )  | String | Coming Soon | Coming Soon | Coming Soon|
 | 2  | Cross site scripting (XSS )  | Integer | Coming Soon | Coming Soon | Coming Soon|
-| 3  |  SQL injection | Coming Soon | String | Coming Soon | Coming Soon|
-| 4  |  SQL injection | Coming Soon | Integer | Coming Soon | Coming Soon|
+| 3  |  SQL injection | String | Coming Soon | Coming Soon | Coming Soon|
+| 4  |  SQL injection | Integer | Coming Soon | Coming Soon | Coming Soon|
 
 ## Ubah Konfigurasi
 
