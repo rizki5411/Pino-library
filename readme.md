@@ -1,6 +1,4 @@
-# Pino Library
-
-Under development
+# Pino Library (Under development | This version is not stable)
 
 ## Installation
 
