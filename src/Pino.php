@@ -6,9 +6,9 @@ use pino\Library\PinoRegex;
 
 class Pino{
 
-    public static function is($GetRequestData,$GetTypeData) {
+    public static function is($GetTypeData,$GetRequestData) {
 
-        return PinoRegex::GetRegex($GetRequestData,$GetTypeData);
+        return PinoRegex::GetRegex($GetTypeData,$GetRequestData);
         
     }
 
