@@ -3,7 +3,7 @@
 // include autoload vendor
 require_once __DIR__ . '/vendor/autoload.php';
 
-// inclue Pino Library
+// include Pino Library
 use pino\Library\Pino;
 
 // Example Data Input
