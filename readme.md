@@ -1,15 +1,25 @@
-# Pino Library 
-# Under development | This version is not stable
+# Pino Library
 
-## Installation
+Pino Library merupakan sebuah library yang dikembangkan untuk melakukan Validasi atau memfilter berbagai karakter yang masuk kedalam HTTP Request. Request yang menggunakan Method GET atau POST, akan diubah menjadi tipe data String atau Integer. Pino Library juga bisa digunakan untuk melakukan Validasi Variable data.
 
-Ada dua cara install Pino Library, silahkan ikuti cara dibawah ini
+## Fitur
 
-### Manual install Via Composer
+|   Jenis |  Deskripsi  |  Contoh Input | Contoh Output  |
+| :------------ | :------------ | :------------ | :------------ |
+|  Validasi String | Validasi String dapat merubah semua data yang masuk menjadi String, menghapus semua karakter khusus, dan merubah spasi menjadi tanda strip (-)  |  Hello --- 45425432564^%^%&^%&o Composer  | Hello--45425432564o-Composer  |
+| Validasi Integer  | Merubah semua data yang masuk menjadi integer, serta menghapus semua data yang bukan bagian dari integer termasuk abjad dan karakter khusus.  | Hello --- 45425432564^%^%&^%&o Composer  | 45425432564  |
 
-Buat file ```package.json```, isi dengan kode json di bawah ini
+## Install
 
-```json
+Install dengan Composer menggunakan perintah berikut
+
+```
+composer require gemarkode/pino-library
+```
+
+Jiika anda create Package.json sendiri, bisa gunakan json di bawah
+
+```
 {
     "require": {
         "gemarkode/pino-library": "dev-master"
@@ -18,28 +28,15 @@ Buat file ```package.json```, isi dengan kode json di bawah ini
 }
 ```
 
-Jalankan perintah dibawah untuk mulai install Library
+kemudian mulai install dependensi dengan perintah berikut
 
 ```
 composer install
 ```
 
-### Integrasi Langsung Via Composer 
+## Cara Menggunakan
 
-Gunakan perintah ini untuk langsung integrasi Via Composer
-
-```
-composer require gemarkode/pino-library
-```
-
-Jika anda belum punya ```package.json```, silahkan ikuti cara pertama
-
-### Tidak disarankan menggunakan GIT
-
-jangan install via ```GIT CLONE```, karena Pino Library menggunakan autoload composer. 
-Kecuali jika anda bisa merubah struktur namespace dan usage di setiap File Pino Library.
-
-## Usage
+Import library
 
 ```php
 <?php
@@ -47,19 +44,21 @@ Kecuali jika anda bisa merubah struktur namespace dan usage di setiap File Pino 
     // include autoload vendor
     require_once __DIR__ . '/vendor/autoload.php';
 
-    // inclue Pino Library
+    // include Pino Library
     use pino\Library\Pino;
     
     // code
+	
   ?>
-```
+  ```
 
-### Example Data Input
+Contoh data yang masuk
 
 ```php
 $data = 'Hello --- 45425432564^%^%&^%&o Composer';
 ```
-### Example Usage With Calling Method
+
+Menggunakan Pino Library dengan memanggil Method secara langsung
 
 ```php
     $pino = new Pino();
@@ -69,7 +68,7 @@ $data = 'Hello --- 45425432564^%^%&^%&o Composer';
     return $pino->is("integer", $data); // result : 45425432564
 ```
 
-### Example Usage With Scope Resolution Operator (::)
+Menggunakan Pino Library dengan Scope Resolution Operator (::)
 
 ```php
     return Pino::is("string", $data); // result : Hello--45425432564o-Composer
@@ -77,4 +76,44 @@ $data = 'Hello --- 45425432564^%^%&^%&o Composer';
     return Pino::is("integer", $data); // result : 45425432564
 ```
 
-cek file ```Example.php``` untuk melihat contoh penggunaan Pino Library
+kamu bisa melihat contoh penerapan di file ```Example.php```
+
+## Penerapan 
+
+Contoh penerapan Pino Library
+
+#### Menyaring karakter
+
+Untuk menyaring data agar menghasilkan data String Atau Integer
+
+|  No | Jenis Validasi  |  Input | Output  | Dokumentasi  |
+| :------------ | :------------ | :------------ | :------------ | :------------ |
+| 1  | String Validation  | Request dari Http POST, Convert dari Variable data  | Data String  | Coming Soon  |
+| 2  |  Integer Validation (number only)  | Request dari Http POST, Convert dari Variable data  | Data Integer  | Coming Soon  |
+
+#### Mengamankan Parameter 
+
+Menyaring data untuk mengapus berbagai jenis kode injeksi yang di kirim melalui Parameter
+
+|  No | Jenis Kerentanan  | Type | Contoh Parameter  | Contoh Bentuk Injeksi  | Contoh output  | Dokumentasi|
+| :------------ | :------------ | :------------ |:------------ | :------------ | :------------ | :------------ |
+| 1  | Cross site scripting (XSS )  | String | news.php?id=1  | <script>alert(1)</script>  | scriptalert1script  | Coming Soon  |
+| 2  | Cross site scripting (XSS )  | Integer | news.php?id=1  | <script>alert(1)</script>  | 1  | Coming Soon  |
+| 3  |  SQL injection | String | news.php?id=1  | '+ORDER+BY+1--+  | 1ORDERBY1  | Coming Soon |
+| 4  |  SQL injection | Integer | news.php?id=1  | '+ORDER+BY+1--+  | 11  | Coming Soon |
+
+
+#### Validasi Form 
+
+Menyaring data yang masuk melalui inputan atau form
+
+|  No | Jenis Kerentanan  | Type | Contoh Bentuk Injeksi  | Contoh output  | Dokumentasi|
+| :------------ | :------------ |:------------ | :------------ | :------------ | :------------ |
+| 1  | Cross site scripting (XSS )  | String | Coming Soon | Coming Soon | Coming Soon|
+| 2  | Cross site scripting (XSS )  | Integer | Coming Soon | Coming Soon | Coming Soon|
+| 3  |  SQL injection | Coming Soon | String | Coming Soon | Coming Soon|
+| 4  |  SQL injection | Coming Soon | Integer | Coming Soon | Coming Soon|
+
+## Ubah Konfigurasi
+
+coming soon
