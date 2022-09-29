@@ -76,7 +76,7 @@ Menggunakan Pino Library dengan Scope Resolution Operator (::)
     return Pino::is("integer", $data); // result : 45425432564
 ```
 
-kamu bisa melihat contoh penerapan di file ```Example.php```
+kamu bisa melihat contoh penerapan di file ```/test/Example.php```
 
 ## Penerapan 
 
