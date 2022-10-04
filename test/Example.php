@@ -16,10 +16,10 @@ $pino = new Pino();
 
 return $pino->is("string", $data); // result : Hello--00045425432564o-Composer
 
-return $pino->is("integer", $data); // result : 00045425432564
+return $pino->is("integer", $data); // result : 45425432564
 
 // Example With Scope Resolution Operator (::)
 
 return Pino::is("string", $data); // result : Hello--00045425432564o-Composer
 
-return Pino::is("integer", $data); // result : 00045425432564
+return Pino::is("integer", $data); // result : 45425432564
