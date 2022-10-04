@@ -29,7 +29,7 @@ class PinoRegex{
 
         }else if($GetTypeData == "integer" || $GetTypeData == "Integer" || $GetTypeData == "INTEGER"){
             
-            return PinoRegex::Integer($GetRequestData);
+            return (int)PinoRegex::Integer($GetRequestData);
         
         }else{
 
